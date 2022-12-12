@@ -1,0 +1,345 @@
+@charset "utf-8";
+
+/* 브라우저 리셋(하단 5개는 무조건!)
+   wrap width:100%도 기본값으로 맞춰주기 */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgb(24, 23, 23);
+}
+
+ul, ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+}
+
+.wrap{
+    width: 100%; 
+    min-width: 1240px; 
+}
+
+.header{
+    /* background-color: rgb(237, 205, 100); */
+    height: 80px;
+}
+
+.headerin{
+    /* background-color: rgb(236, 178, 108); */
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo a{
+    background-color: aquamarine;
+    width: 138px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/logo.gif);
+    text-indent: -9999999px;
+}
+
+.gnb ul{
+    display: flex;
+}
+
+.gnb li{
+    margin-right: 50px;
+}
+/* 
+    a태그의 글자색은 반드시 a태그에서 변경해야함 
+*/
+.gnb li a{
+    color: rgb(24, 23, 23);
+    font-size: 18px;
+}
+
+.gnb li a:hover{
+    color: rgb(255, 0, 149);
+}
+
+.member ul{
+    display: flex;
+}
+
+.member li{
+    margin-left: 15px;
+}
+
+.member li a{
+    color: rgb(24, 23, 23);
+}
+
+.member li a:hover{
+    text-decoration: underline;
+}
+
+.member .btnSc a{
+    display: block;
+    width: 22px;
+    height: 20px;
+    background-image: url(../img/icon_search.png);
+    text-indent: -999999px;
+    background-repeat: no-repeat;
+}
+
+.member .btnCart a{
+    display: block;
+    width: 23px;
+    height: 20px;
+    background-image: url(../img/icon_cart.png);
+    text-indent: -9999999px;
+}
+
+.main1{
+    position: relative;
+    margin-bottom: 40px;
+    /* background-color: aquamarine; */
+    height: 480px;
+    overflow: hidden;
+    /* .main1의 공간 밖의 내용을 보이지 않게 설정함 -안전사이즈보다 화면이 더 큰 경우, 스크롤이 생기면 안됨*/
+}
+
+.main1Img{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -800px;
+}
+
+/* 
+    ※ .main1Img의 이미지 너비값이 안전사이즈보다 넓음
+    ※ 그래서 강제로 가운데 배치하기 위해서 position : absolute를 사용함
+    ※ .main1의 하나뿐인 자식인 .main1Tmg가 absolute 처리가 되면
+    세로 높이 값이 0으로 처리가 되므로
+    .main1에서 사용할 만큼의 높이값을 강제로 입력함
+    ※ 브라우저의 너비보다 더 큰 이미지 때문에 아래쪽에 스크롤이 생기므로
+        이를 정리하기 위해서 .main1에 overflow: hidden;을 설정함.
+    ※ 안전사이즈보다 브라우저의 크기가 작아질 경우
+        .main1Img의 이미지가 잘려서 표시가 되므로
+        전체 영역의 최소 너비값(min-width)을 안전사이즈의 너비로 고정함.
+*/
+
+.main2{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: blanchedalmond; */
+    width: 1200px;
+   margin-right: auto;
+   margin-left: auto;
+   margin-bottom: 40px;
+}
+
+.main3{
+    width: 1200px;
+    /* background-color: blanchedalmond; */
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.main3 h2{
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 24px;
+    /* 
+        css를 시작할 때 body태그에 적용한 기본 줄높이가 20px임
+        폰트의 기본 높이값 = 줄높이
+        폰트 사이즈가 더 커지면 글자가 위,아래의 여역이 겹쳐지므로
+        줄높이도 같이 수정해야함.
+    */
+}
+
+.main3 h2 span{
+    font-weight: normal;
+}
+
+.main3 ul{
+    display: flex;
+   justify-content: space-between; 
+}
+
+.main3 ul li{
+    width: 285px;
+    /* background-color: blue; */
+    text-align: center;
+}
+
+.main3 li .itemImg{
+    margin-bottom: 15px;
+    border: 0.5px solid rgb(196, 189, 189);
+}
+
+.main3 li .itemImg img{
+    
+     width: 100%;
+}
+
+.main3 li .itemBrand{
+    color: rgb(75, 74, 74);
+    margin-bottom: 5px;
+}
+
+.main3 li .itemName{
+    color: rgb(75, 74, 74);
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.main3 li .itemPrice{
+    color: rgb(75, 74, 74);
+    margin-bottom: 5px;
+}
+
+.main3 li .itemPrice span{
+    margin-top: 6px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.main3 .more{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.main3 .more a{
+    color: rgb(49, 48, 48);
+    padding-right: 16px;
+    /* background-color: rgb(235, 224, 245); */
+    background-image: url(../img/icon_plus.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.main3 .more a span{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-left: 3px;
+}
+
+.main4{
+    width: 1200px;
+    /* background-color: blueviolet; */
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.main4 ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main4 ul li{
+    position: relative;
+    width: 380px;
+}
+
+.main4 ul li .m4Txt{
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    font-size: 15px;
+    color: rgb(43, 42, 42);
+    line-height: 24px;
+}
+
+.footer{
+    
+    /* background-color: blue; */
+    border-top: 0.5px solid rgb(177, 174, 174);
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.footer .footerIn{
+    width: 1200px;
+    /* background-color: beige; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .fLeft{
+    /* width: 800px; */
+    /* 이것도 가능하다! */
+}
+
+.footerIn .fLeft .fMenu{
+    margin-bottom: 25px;
+}
+
+.footerIn .fLeft .fMenu ul{
+    display: flex;
+}
+
+.fLeft .fMenu ul li{
+    margin-right: 15px;
+   
+}
+
+.fMenu li a{
+    color: rgb(39, 39, 39);
+}
+
+.fMenu .point a{
+    color: rgb(255, 0, 149);
+}
+
+.fLeft .fInfo a{
+    color: rgb(39, 39, 39);
+}
+
+.fInfo .mar{
+    margin-right: 15px;
+}
+
+.fInfo .bar{
+    font-size: 9px;
+    color: rgb(39, 39, 39);
+}
+
+
+.footer .kg .kg2{
+    margin-bottom: 10px;
+    /* background-color: blue; */
+    padding-top: 60px;
+    background-image: url(../img/inicis.png);
+    background-repeat: no-repeat;
+}
+
+.kg3 a{
+    color: rgb(39, 39, 39);
+    padding-right: 13px;
+    /* background-color: rgb(196, 196, 238); */
+    background-image: url(../img/arrow01.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.kg3 a span{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 7px;
+    margin-left: 4px;
+}
